@@ -14,7 +14,20 @@ public class EnemyScript : MonoBehaviour
 
     public float speed = 1.0f;
 
+    public GameObject bulletPrefab;
+
+    private float timeTillFire;
+
+    public float fireDelay = 3;
+
+    
     //public int scoreValue;
+    void Start()
+    {
+        timeTillFire = fireDelay;
+        
+
+    }
 
 
     private void Awake()
@@ -55,6 +68,26 @@ public class EnemyScript : MonoBehaviour
                     AdvanceRow();
                 }
         }
+        
+        if (timeTillFire > 0)
+        {
+            timeTillFire -= Time.deltaTime;
+        }
+        else
+        {
+            EnemyShoot();
+            timeTillFire = fireDelay;
+
+        }
+
+    }
+    public void EnemyShoot()
+    {
+        int numberofEnemies = GetComponentsInChildren<Invader>().Length;
+        int index = Random.Range(0, numberofEnemies);
+        var enemyArray = GetComponentsInChildren<Invader>();
+        Vector3 bullPos = enemyArray[index].transform.position;
+        Instantiate(bulletPrefab, bullPos, Quaternion.identity);
     }
     private void AdvanceRow()
     {
