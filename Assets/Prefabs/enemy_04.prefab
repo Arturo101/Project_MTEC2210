@@ -7,6 +7,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -1769575177780943848, guid: c0ea3f5e9771e0d4da19c191ae1add66,
+        type: 3}
+      propertyPath: scoreValue
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 1954332510035874342, guid: c0ea3f5e9771e0d4da19c191ae1add66,
         type: 3}
       propertyPath: m_RootOrder
@@ -111,6 +116,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: enemy_04
+      objectReference: {fileID: 0}
+    - target: {fileID: 5081595400867984784, guid: c0ea3f5e9771e0d4da19c191ae1add66,
+        type: 3}
+      propertyPath: m_TagString
+      value: Enemy
       objectReference: {fileID: 0}
     - target: {fileID: 6081967023866773985, guid: c0ea3f5e9771e0d4da19c191ae1add66,
         type: 3}
